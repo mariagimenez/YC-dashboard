@@ -1,0 +1,24 @@
+{
+  "name": "Intro-ReactJS",
+  "homepage": "https://miguelgomez.io/demos/intro-reactjs",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.9.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/styles": "^3.0.0-alpha.10",
+    "material-ui": "^1.0.0-beta.47",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
+  },
+  "scripts": {
+    "start": "set PORT=8080&& react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
