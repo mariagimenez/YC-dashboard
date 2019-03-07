@@ -5,6 +5,10 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import Boletas from '../components/Boletas'
+import GraficoBar from '../components/GraficoBar'
+import GraficoLineal from '../components/GraficoLineal'
+import GraficoRadar from '../components/GraficoRadar'
+import GraficoPieCustome from '../components/GraficoPieCustome'
 
 const styles = theme => ({
   root: {
@@ -26,8 +30,17 @@ function App(props) {
   let state = {
     dataGrafBoletas: [
       {fecha: "12/12/2019", cantidad: 50},
-      {fecha: "13/12/2019", cantidad: 20},
-      {fecha: "14/12/2019", cantidad: 70}
+      {fecha: "13/12/2019", cantidad: 20 },
+      {fecha: "14/12/2019", cantidad: 70 },
+      {fecha: "15/12/2019", cantidad: 84 },
+      {fecha: "16/12/2019", cantidad: 85 }
+    ],
+    dataGrafBoletasxOficial: [
+      {subject: "Yani", cantidad: 50},
+      {subject: "Ivo", cantidad: 20 },
+      {subject: "Sole", cantidad: 70 },
+      {subject: "Marian", cantidad: 84 },
+      {subject: "Mery", cantidad: 95 }
     ],
     dayBoletas: {
       cantidad : 70
@@ -47,14 +60,26 @@ function App(props) {
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
-              Boletas generadas en el dia
-            <Boletas cantidad={state.dayBoletas.cantidad}  />
+              Grafico Lineal
+              <GraficoLineal data={state.dataGrafBoletas} ></GraficoLineal>
           </Paper>          
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
-            Grafico de los ultimos 5 dias
-            Aca va un grafico
+            Grafico de Barras
+            <GraficoBar data={state.dataGrafBoletas}> </GraficoBar>
+          </Paper>          
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            Grafico de Radar
+            <GraficoRadar data={state.dataGrafBoletasxOficial}> </GraficoRadar>
+          </Paper>          
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            Grafico de Pie
+            <GraficoPieCustome data={state.dataGrafBoletasxOficial}> </GraficoPieCustome>
           </Paper>          
         </Grid>
         <Grid item xs={4}>
