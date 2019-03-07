@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Radar, RadarChart, PolarGrid,
     PolarAngleAxis, PolarRadiusAxis} from  'recharts';
+    
 
 class GraficoRadar extends Component {
   render () {

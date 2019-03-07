@@ -9,6 +9,8 @@ import GraficoBar from '../components/GraficoBar'
 import GraficoLineal from '../components/GraficoLineal'
 import GraficoRadar from '../components/GraficoRadar'
 import GraficoPieCustome from '../components/GraficoPieCustome'
+import GraficoRadialBar from '../components/GraficoRadialBar'
+import GraficoStack from '../components/GraficoStack'
 
 const styles = theme => ({
   root: {
@@ -36,11 +38,18 @@ function App(props) {
       {fecha: "16/12/2019", cantidad: 85 }
     ],
     dataGrafBoletasxOficial: [
-      {subject: "Yani", cantidad: 50},
-      {subject: "Ivo", cantidad: 20 },
-      {subject: "Sole", cantidad: 70 },
-      {subject: "Marian", cantidad: 84 },
-      {subject: "Mery", cantidad: 95 }
+      {subject: "Yani", cantidad: 50, fill: '#8884d8'},
+      {subject: "Ivo", cantidad: 20 , fill: '#83a6ed'},
+      {subject: "Sole", cantidad: 70 , fill: '#8dd1e1'},
+      {subject: "Marian", cantidad: 84 , fill: '#82ca9d' },
+      {subject: "Mery", cantidad: 95 , fill: '#a4de6c'}
+    ],
+    dataGrafCheques: [
+      {analizados: 100, comprados: 50, rechazados: 50},
+      {analizados: 250, comprados: 220 , rechazados: 30 },
+      {analizados: 130, comprados: 70 , rechazados: 60},
+      {analizados: 90, comprados: 84 , rechazados: 6 },
+      {analizados: 150, comprados: 90 , rechazados: 60 }
     ],
     dayBoletas: {
       cantidad : 70
@@ -80,6 +89,18 @@ function App(props) {
           <Paper className={classes.paper}>
             Grafico de Pie
             <GraficoPieCustome data={state.dataGrafBoletasxOficial}> </GraficoPieCustome>
+          </Paper>          
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            Grafico de Radial Bar
+            <GraficoRadialBar data={state.dataGrafBoletasxOficial}> </GraficoRadialBar>
+          </Paper>          
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            Grafico de Stack
+            <GraficoStack data={state.dataGrafCheques}> </GraficoStack>
           </Paper>          
         </Grid>
         <Grid item xs={4}>
