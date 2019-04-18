@@ -28,7 +28,12 @@ const styles = theme => ({
 
 function App(props) {
   const { classes } = props;
+  let number = 3500
+  let int = number.toLocaleString('es', { style: 'decimal', decimal: '2',minimumFractionDigits: 2 })
 
+  let date = "2019-04-12"
+  let fecha = date.split("-").reverse().join("/");
+  
   let state = {
     dataGrafBoletas: [
       {fecha: "12/12/2019", cantidad: 50},
@@ -59,6 +64,7 @@ function App(props) {
       seleccionados : 90,
       rechazados : 10
     }
+
   };
 
   return (
@@ -66,6 +72,11 @@ function App(props) {
       <Grid container spacing={24}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>Dashboard Journey Cheques</Paper>
+        </Grid>
+        <Grid item xs={12}>
+          Pruebas con Formato <br></br>
+          {int} <br></br>
+          { fecha }
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
